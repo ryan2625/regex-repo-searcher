@@ -1,19 +1,19 @@
 const svgs = [
-     "./assets/SVGs/menu.svg",
-     "./assets/SVGs/files.svg",
-     "./assets/SVGs/source-control.svg",
-     "./assets/SVGs/debug-alt.svg",
-     "./assets/SVGs/extensions.svg",
-     "./assets/SVGs/terminal-cmd.svg",
-     "", 
-     "", 
-     "./assets/SVGs/settings-gear.svg",
-     "./assets/SVGs/account.svg"
+    "./assets/SVGs/menu.svg",
+    "./assets/SVGs/files.svg",
+    "./assets/SVGs/source-control.svg",
+    "./assets/SVGs/debug-alt.svg",
+    "./assets/SVGs/extensions.svg",
+    "./assets/SVGs/terminal-cmd.svg",
+    "",
+    "",
+    "./assets/SVGs/settings-gear.svg",
+    "./assets/SVGs/account.svg"
 ]
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $.each(svgs, function(index, val) {
+    $.each(svgs, function (index, val) {
         var svgDiv = $("<div>").addClass("svgCont")
         var svgImg = $("<img>").attr("src", val).addClass("svgImg")
         svgDiv.append(svgImg)
@@ -22,9 +22,9 @@ $(document).ready(function() {
 
     $('img[src="./assets/SVGs/files.svg"]').parent().addClass("active")
 
-    $(".svgCont").click(function() {
+    $(".svgCont").click(function () {
         let real_src = ($(this).find("img").attr("src"))
-        if (real_src == "" || real_src == "./assets/SVGs/visual-studio.svg"){ 
+        if (real_src == "" || real_src == "./assets/SVGs/visual-studio.svg") {
             return
         }
         $(".svgCont").removeClass("active")

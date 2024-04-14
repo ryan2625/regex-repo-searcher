@@ -24,10 +24,17 @@ h1 {
     margin: 50px auto 0 auto;
 }
 
+.header {
+    position: relative;
+    height: 100px;
+}
+
 .header > * {
     text-align: center;
     margin: 0rem !important;
+    height: 60px;
 }
+
 
 .code-box {
     max-width: 1050px;
@@ -119,18 +126,33 @@ h1 {
     height: 50px;
 }
 
-#search {
-    margin-left: 60px;
-    display: grid;
-    place-items: center;
+.searching {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.searching > div > img {
+    width: 30px;
+    height: 30px;
+    margin: 0 .8rem;
+}
+
+#search > img {
+    filter: invert(74%) sepia(30%) saturate(0%) hue-rotate(155deg) brightness(89%) contrast(98%);
+    height: 16px;
+    position: absolute;
+    left: 65px;
 }
 
 #search > input {
     display: block;
+    max-height: 15px !important;
     padding: .4rem 5rem;
-    background-color: #232323;
+    background-color: #232328;
     border: 1px solid #5f5f5f;
-    color: rgb(217, 217, 217);
+    color: #b3b3b3;
     border-radius: 7px;
     text-align: center;
 }
