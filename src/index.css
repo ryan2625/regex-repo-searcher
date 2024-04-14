@@ -1,0 +1,140 @@
+:root {
+    --main-text: #f8f8f8;
+    --secondary-bg: #0f111a;
+    --secondary-dark-bg: #090b10;
+    --text-dimmed: #7f808e;
+}
+
+body {
+    background: #000 url("./assets/bg-1.jpg") repeat-x center bottom / 550px;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    height: 200vh;
+    font-family:  'Hack Regular', monospace;
+    color: var(--main-text);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.main-cont {
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+}
+
+.header > * {
+    text-align: center;
+    margin: 0rem !important;
+}
+
+.code-box {
+    max-width: 1050px;
+    margin: 6rem auto 0 auto;
+    background-color: var(--secondary-bg);
+    display: flex;
+    font-size: 20px;
+    position: relative;
+}
+
+.sidebar-cont {
+    height: 100%;
+    width: 55px;
+    background-color: var(--secondary-dark-bg);
+}
+
+.svgCont {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.svgCont > img {
+    width: 30px;
+    margin: 0 auto;
+    filter: invert(42%) sepia(15%) saturate(0%) hue-rotate(151deg) brightness(79%) contrast(90%);
+}
+
+.closers {
+    width: 20px;
+    filter: invert(60%) sepia(7%) saturate(1039%) hue-rotate(200deg) brightness(83%) contrast(80%);
+}
+
+.close-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+.close-buttons > div {
+    margin: auto 0;
+    display: grid;
+    place-items: center;
+}
+
+.close-buttons > div {
+    padding: .5rem;
+}
+
+.close-buttons > div:hover {
+    background-color: #eeeeee1e;
+}
+
+.active > img {
+    filter: invert(100%) sepia(0%) saturate(6517%) hue-rotate(57deg) brightness(120%) contrast(88%);
+}
+
+.active::before {
+    content: "";
+    background-color: #f0f0f0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    box-sizing: content-box;
+}
+
+.svgCont:hover .svgImg {
+    filter: invert(100%) sepia(0%) saturate(6517%) hue-rotate(57deg) brightness(120%) contrast(88%);
+}
+
+
+.number-cont {
+    color: var(--text-dimmed);
+    margin-left: 1rem;
+    margin-top: 1rem;
+    line-height: 25px;
+}
+
+.code-top {
+    position: absolute;
+    background-color: var(--secondary-dark-bg);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: -50px;
+    height: 50px;
+}
+
+#search {
+    margin-left: 60px;
+    display: grid;
+    place-items: center;
+}
+
+#search > input {
+    display: block;
+    padding: .4rem 5rem;
+    background-color: #232323;
+    border: 1px solid #5f5f5f;
+    color: rgb(217, 217, 217);
+    border-radius: 7px;
+    text-align: center;
+}
+
+#no_filter {
+    filter: none !important;
+}
