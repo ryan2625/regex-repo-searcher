@@ -73,8 +73,6 @@ h1 {
 
 .close-buttons {
     display: flex;
-    gap: 1rem;
-    margin-right: 1rem;
 }
 
 .close-buttons > div {
@@ -82,10 +80,11 @@ h1 {
     display: grid;
     place-items: center;
     cursor: pointer;
+    height: 100%;
 }
 
 .close-buttons > div {
-    padding: .5rem;
+    padding: 0 .5rem;
 }
 
 .close-buttons > div:hover {
@@ -136,6 +135,7 @@ h1 {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    width: 50%;
 }
 
 .searching > div > img {
@@ -154,14 +154,19 @@ h1 {
 #search > input {
     display: block;
     max-height: 15px !important;
-    padding: .4rem 5rem;
+    padding: .4rem 0;
     background-color: #232328;
     border: 1px solid #5f5f5f;
     color: #b3b3b3;
     border-radius: 7px;
     text-align: center;
+    width: 100%;
 }
 
 #no_filter {
     filter: none !important;
+}
+
+#exit:hover {
+    background-color: red !important;
 }
