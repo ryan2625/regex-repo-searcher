@@ -37,7 +37,7 @@ h1 {
 
 
 .code-box {
-    max-width: 1050px;
+    max-width: 950px;
     margin: 6rem auto 0 auto;
     background-color: var(--secondary-bg);
     display: flex;
@@ -61,7 +61,7 @@ h1 {
 
 .svgCont > img {
     aspect-ratio: 1/1;
-    width: 30px;
+    width: 25px;
     margin: 0 auto;
     filter: invert(42%) sepia(15%) saturate(0%) hue-rotate(151deg) brightness(79%) contrast(90%);
 }
@@ -110,15 +110,21 @@ h1 {
     filter: invert(100%) sepia(0%) saturate(6517%) hue-rotate(57deg) brightness(120%) contrast(88%);
 }
 
-
 .number-cont {
     color: var(--text-dimmed);
     margin-left: 1rem;
     margin-top: 1rem;
     line-height: 25px;
     width: 100%;
+    font-family: "Fira Code", monospace;
+    font-weight: 400;
+    font-size: 16px;
 }
 
+.span-cont {
+    width: fit-content;
+    display: inline-block;
+}
 
 .code-top {
     position: absolute;
@@ -126,8 +132,8 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    top: -50px;
-    height: 50px;
+    top: -40px;
+    height: 40px;
 }
 
 .searching {
@@ -139,9 +145,49 @@ h1 {
 }
 
 .searching > div > img {
-    width: 30px;
-    height: 30px;
-    margin: 0 .8rem;
+    width: 25px;
+    height: 25px;
+    margin: 0 .9rem;
+}
+
+.s-blue {
+    color: #4591f5
+}
+
+.s-blue-light {
+    color: #6be1ff
+}
+
+.s-yellow {
+    color: #f7f13b;
+}
+
+.s-orange {
+    color: #ed802d
+}
+
+.s-purple {
+    color: #ac5fbb;
+}
+
+.s-purple-light {
+    color: #d590e8;
+}
+
+.s-red {
+    color: #ff6f79
+}
+
+.s-red-dark {
+    color: rgb(255, 0, 0)
+}
+
+.s-green {
+    color: #89f827;
+}
+
+.s-white {
+    color: #dfdfdf;
 }
 
 #search > img {
