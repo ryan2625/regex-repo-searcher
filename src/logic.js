@@ -12,6 +12,8 @@ const chars = [
     'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я',"α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ", "λ", "μ", "ν", "ξ", "ο", "π", "ρ", "σ", "τ", "υ", "φ", "χ", "ψ", "ω"
 ];
 
+
+
 $(document).ready(function () {
 
     function sleep(ms) {
@@ -22,41 +24,55 @@ $(document).ready(function () {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    let time = 0
+    // Surprisingly this algo I came up with works - DON'T TOUCH IT
+    // Will document it later...
     async function titleDisplay() {
-        while (time < 40) {
+        let time = 0
+        let iterations = 70
+        let sleepTime = 35
+        while (time < iterations) {
             let newTitle = title.split("")
             let newSub = sub.split("")
+
             for (let char in newTitle) {
+                let status = newTitle.length - char + time 
+                let mainIterations = iterations - newSub.length
+                if (status >=  mainIterations) {
+                    title = title.split("")
+                    title[char] = originalTitle[char]
+                    newTitle[char] = originalTitle[char]
+                    title = title.join("")
+                    $("#main_title").text(title)
+
+                } else {
                 newTitle[char] = getRandomElement(chars)
+                }
             }
-            for (char in sub) {
+
+            for (char in newSub) {
+                let status = newSub.length - char + time 
+                let subIterations = iterations 
+                if (status >=  subIterations) {
+                    sub = sub.split("")
+                    sub[char] = originalSub[char]
+                    newSub[char] = originalSub[char]
+                    sub = sub.join("")
+                    $("#sub_title").text(sub)
+
+                } else {
                 newSub[char] = getRandomElement(chars)
+                }
             }
+            
             title = newTitle.join("")
             sub = newSub.join("")
             $("#main_title").text(title)
             $("#sub_title").text(sub)
             time += 1
-            await sleep(30)
-        }
-        for (char in title) {
-            title = title.split("")
-            title[char] = originalTitle[char]
-            title = title.join("")
-            $("#main_title").text(title)
-            await sleep(8)
-        }
-        for (char in sub) {
-            sub = sub.split("")
-            sub[char] = originalSub[char]
-            sub = sub.join("")
-            $("#sub_title").text(sub)
-            await sleep(8)
+            await sleep(sleepTime)
         }
     }
 
-    
-
     titleDisplay()
+
 })
