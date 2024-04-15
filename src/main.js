@@ -3,10 +3,7 @@ const svgs = [
     "./assets/SVGs/files.svg",
     "./assets/SVGs/source-control.svg",
     "./assets/SVGs/debug-alt.svg",
-    "./assets/SVGs/terminal-cmd.svg",
-    "./assets/SVGs/placeholder.svg",
-    "./assets/SVGs/settings-gear.svg",
-    "./assets/SVGs/account.svg"
+    "./assets/SVGs/extensions.svg",
 ]
 
 $(document).ready(function () {
@@ -15,7 +12,7 @@ $(document).ready(function () {
         var svgDiv = $("<div>").addClass("svgCont")
         var svgImg = $("<img>").attr("src", val).addClass("svgImg")
         svgDiv.append(svgImg)
-        $(".sidebar-cont").append(svgDiv)
+        $(".side-bar1").append(svgDiv)
     })
 
     $('img[src="./assets/SVGs/files.svg"]').parent().addClass("active")

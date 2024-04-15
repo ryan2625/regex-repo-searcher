@@ -46,9 +46,15 @@ h1 {
 }
 
 .sidebar-cont {
-    height: 100%;
     width: 55px;
     background-color: var(--secondary-dark-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.side-bar1{
+    margin-bottom: 3rem;
 }
 
 .svgCont {
@@ -114,17 +120,13 @@ h1 {
     color: var(--text-dimmed);
     margin-left: 1rem;
     margin-top: .5rem;
-    line-height: 25px;
     width: 100%;
     font-family: "Fira Code", monospace;
     font-weight: 400;
     font-size: 16px;
-    line-height: 26px;
-}
+    line-height: 21px;
+    overflow-x: auto;
 
-.span-cont {
-    width: fit-content;
-    display: inline-block;
 }
 
 .code-top {
@@ -180,7 +182,7 @@ h1 {
 }
 
 .s-red-dark {
-    color: rgb(255, 0, 0)
+    color: rgb(255, 255, 255)
 }
 
 .s-green {
@@ -190,6 +192,32 @@ h1 {
 .s-white {
     color: #dfdfdf;
 }
+
+.span-cont {
+    width: fit-content;
+    display: inline-block !important;
+    overflow: hidden !important;
+    white-space: nowrap;
+}
+
+.span-cont > * {
+    overflow: hidden !important;
+}
+
+.num-row:hover .span-cont {
+    animation: expandFromLeft .5s 1.2s steps(20, end) forwards;
+    transform-origin: left;
+}
+
+@keyframes expandFromLeft {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: fit-content;
+    }
+  }
+  
 
 #search > img {
     filter: invert(74%) sepia(30%) saturate(0%) hue-rotate(155deg) brightness(89%) contrast(98%);
