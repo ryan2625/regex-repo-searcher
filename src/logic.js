@@ -24,7 +24,7 @@ $(document).ready(function () {
 
     let time = 0
     async function titleDisplay() {
-        while (time < 25) {
+        while (time < 40) {
             let newTitle = title.split("")
             let newSub = sub.split("")
             for (let char in newTitle) {

@@ -56,9 +56,11 @@ h1 {
     display: flex;
     justify-content: center;
     position: relative;
+    cursor: pointer;
 }
 
 .svgCont > img {
+    aspect-ratio: 1/1;
     width: 30px;
     margin: 0 auto;
     filter: invert(42%) sepia(15%) saturate(0%) hue-rotate(151deg) brightness(79%) contrast(90%);
@@ -79,6 +81,7 @@ h1 {
     margin: auto 0;
     display: grid;
     place-items: center;
+    cursor: pointer;
 }
 
 .close-buttons > div {
@@ -114,7 +117,9 @@ h1 {
     margin-left: 1rem;
     margin-top: 1rem;
     line-height: 25px;
+    width: 100%;
 }
+
 
 .code-top {
     position: absolute;
