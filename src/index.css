@@ -113,12 +113,13 @@ h1 {
 .number-cont {
     color: var(--text-dimmed);
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
     line-height: 25px;
     width: 100%;
     font-family: "Fira Code", monospace;
     font-weight: 400;
     font-size: 16px;
+    line-height: 26px;
 }
 
 .span-cont {
