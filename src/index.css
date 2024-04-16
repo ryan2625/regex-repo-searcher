@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #000 url("./assets/bg-1.jpg") repeat-x center bottom / 550px;
+    background: #000 url("./assets/bg-1-min.webp") repeat-x center bottom / 550px;
     background-attachment: fixed;
     overflow-x: hidden;
     height: 200vh;
@@ -154,7 +154,7 @@ h1 {
 }
 
 .s-blue {
-    color: #4591f5
+    color: #549bf8
 }
 
 .s-blue-light {
@@ -204,7 +204,7 @@ h1 {
     overflow: hidden !important;
 }
 
-.num-row:hover .span-cont {
+.not-used {
     animation: expandFromLeft .5s 1.2s steps(20, end) forwards;
     transform-origin: left;
 }
