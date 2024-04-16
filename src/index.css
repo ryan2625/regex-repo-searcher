@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #000 url("./assets/bg1.png") repeat-x center 60vh / 300px;
+    background: #000 url("./assets/bg1.png") repeat-x center 60vh / 400px;
     background-attachment: fixed;
     overflow-x: hidden;
     height: 200vh;
@@ -228,7 +228,7 @@ h1 {
 }
 
 .anim6 {
-    width: 106px;
+    width: 104px;
     animation: expandFromLeft .5s 5.5s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
@@ -247,7 +247,7 @@ h1 {
 }
 
 .anim7 {
-    width: 106px;
+    width: 104px;
     animation: expandFromLeft .5s 6s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
@@ -266,7 +266,7 @@ h1 {
 }
 
 .anim8 {
-    width: 106px;
+    width: 104px;
     animation: expandFromLeft .5s 6.5s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
@@ -285,7 +285,7 @@ h1 {
 }
 
 .anim9 {
-    width: 106px;
+    width: 104px;
     animation: expandFromLeft .5s 7s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
@@ -304,7 +304,7 @@ h1 {
 }
 
 .anim10 {
-    width: 106px;
+    width: 104px;
     animation: expandFromLeft .5s 7.5s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
@@ -323,7 +323,7 @@ h1 {
 }
 
 .anim11 {
-    width: 106px;
+    width: 104px;
     animation: expandFromLeft .5s 8s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
@@ -342,7 +342,7 @@ h1 {
 }
 
 .anim17 {
-    width: 50px;
+    width: 48px;
     animation: expandFromLeft 2s 13s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
