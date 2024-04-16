@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #000 url("./assets/bg-1-min.webp") repeat-x center bottom / 550px;
+    background: #000 url("./assets/bg1.png") repeat-x center 60vh / 300px;
     background-attachment: fixed;
     overflow-x: hidden;
     height: 200vh;
@@ -223,7 +223,7 @@ h1 {
     z-index: 999;
     height: 100%;
     right: 0;
-    animation: blink 1s 6;
+    animation: blink 1s 5.5;
     opacity: 0
 }
 
@@ -337,13 +337,13 @@ h1 {
     z-index: 999;
     height: 100%;
     right: 0;
-    animation: blink 1s 8s 4;
+    animation: blink 1s 8s 5.5;
     opacity: 0
 }
 
 .anim17 {
     width: 50px;
-    animation: expandFromLeft 2s 12s steps(40, end) forwards;
+    animation: expandFromLeft 2s 13.5s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
 }
@@ -356,7 +356,7 @@ h1 {
     z-index: 999;
     height: 100%;
     right: 0;
-    animation: blink 1s 12s infinite;
+    animation: blink 1s 13.5s infinite;
     opacity: 0
 }
 
