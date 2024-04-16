@@ -27,9 +27,9 @@ $(document).ready(function () {
     // Algorithm for the animation that updates and scrambles our titles
     async function titleDisplay() {
         // How long you want the animation to run for
-        const iterations = 70
+        const iterations = 75
         // How fast the letters change
-        const sleepTime = 33
+        const sleepTime = 35
         // Delay between changing the main title and sub title
         const delayBetweenTitles = 5
         let time = 0

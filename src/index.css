@@ -74,7 +74,7 @@ h1 {
 
 .closers {
     width: 20px;
-    filter: invert(60%) sepia(7%) saturate(1039%) hue-rotate(200deg) brightness(83%) contrast(80%);
+    filter: invert(60%) sepia(7%) saturate(1039%) hue-rotate(200deg) brightness(200%) contrast(80%);
 }
 
 .close-buttons {
