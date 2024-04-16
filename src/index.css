@@ -193,6 +193,10 @@ h1 {
     color: #dfdfdf;
 }
 
+.num-row {
+    width: fit-content;
+}
+
 .span-cont {
     width: fit-content;
     display: inline-block !important;
@@ -204,20 +208,184 @@ h1 {
     overflow: hidden !important;
 }
 
-.not-used {
-    animation: expandFromLeft .5s 1.2s steps(20, end) forwards;
+.anim1 {
+    width: 40px;
+    animation: expandFromLeft .5s 4s steps(40, end) forwards;
     transform-origin: left;
+    position: relative;
+}
+
+.anim1::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 6;
+    opacity: 0
+}
+
+.anim6 {
+    width: 106px;
+    animation: expandFromLeft .5s 5.5s steps(40, end) forwards;
+    transform-origin: left;
+    position: relative;
+}
+
+.anim6::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 5.5s .5;
+    opacity: 0
+}
+
+.anim7 {
+    width: 106px;
+    animation: expandFromLeft .5s 6s steps(40, end) forwards;
+    transform-origin: left;
+    position: relative;
+}
+
+.anim7::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 6s .5;
+    opacity: 0
+}
+
+.anim8 {
+    width: 106px;
+    animation: expandFromLeft .5s 6.5s steps(40, end) forwards;
+    transform-origin: left;
+    position: relative;
+}
+
+.anim8::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 6.5s .5;
+    opacity: 0
+}
+
+.anim9 {
+    width: 106px;
+    animation: expandFromLeft .5s 7s steps(40, end) forwards;
+    transform-origin: left;
+    position: relative;
+}
+
+.anim9::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 7s .5;
+    opacity: 0
+}
+
+.anim10 {
+    width: 106px;
+    animation: expandFromLeft .5s 7.5s steps(40, end) forwards;
+    transform-origin: left;
+    position: relative;
+}
+
+.anim10::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 7.5s .5;
+    opacity: 0
+}
+
+.anim11 {
+    width: 106px;
+    animation: expandFromLeft .5s 8s steps(40, end) forwards;
+    transform-origin: left;
+    position: relative;
+}
+
+.anim11::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 8s 4;
+    opacity: 0
+}
+
+.anim17 {
+    width: 50px;
+    animation: expandFromLeft 2s 12s steps(40, end) forwards;
+    transform-origin: left;
+    position: relative;
+}
+
+.anim17::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    z-index: 999;
+    height: 100%;
+    right: 0;
+    animation: blink 1s 12s infinite;
+    opacity: 0
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes expandFromLeft {
     0% {
-      width: 0;
+      width: 15px;
     }
     100% {
-      width: fit-content;
+      width: 100%;
     }
   }
-  
 
 #search > img {
     filter: invert(74%) sepia(30%) saturate(0%) hue-rotate(155deg) brightness(89%) contrast(98%);
