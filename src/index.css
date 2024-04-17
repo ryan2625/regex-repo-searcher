@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #000 url("./assets/bg1.png") repeat-x center 60vh / 400px;
+    background: #000 url("./assets/bg1.png") repeat-x center 60vh / 500px;
     background-attachment: fixed;
     overflow-x: hidden;
     height: 200vh;
