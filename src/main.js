@@ -26,9 +26,17 @@ $(document).ready(function () {
         $(this).addClass("active")
     })
 
-    // for (let i = 2; i < 25; i++) {
-    //     var div = $("<div>").text(i)
-    //     $(".number-cont").append(div)
-    // }
+    const observer1 = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                $(".step-1").addClass("step-vis");
+                $(".step-1a").addClass("step-vis2");
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "-150px"
+    });
 
+    observer1.observe($(".step1")[0]);
 });

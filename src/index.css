@@ -385,7 +385,7 @@ h1 {
 .btn:after,
 .btn:before {
     content: " ";
-    width: 70px;
+    width: 90px;
     height: 20px;
     position: absolute;
     border: 0px solid #ffffff;
@@ -395,26 +395,25 @@ h1 {
 .btn:after {
     top: 2px;
     left: 2px;
-    border-top: 5px solid rgb(255, 255, 255);
-    border-left: 5px solid rgb(255, 255, 255)
+    border-top: 4px solid rgb(255, 255, 255);
+    border-left: 4px solid rgb(255, 255, 255)
 }
 
 .btn:before {
     bottom: 2px;
     right: 2px;
-    border-bottom: 5px solid rgb(255, 255, 255);
-    border-right: 5px solid rgb(255, 255, 255)
+    border-bottom: 4px solid rgb(255, 255, 255);
+    border-right: 4px solid rgb(255, 255, 255)
 }
 
 .btn:hover:before {
-    width: 75%;
-    height: 75%;
-
+    width: 97%;
+    height: 88%
 }
 
 .btn:hover:after {
-    width: 75%;
-    height: 75%
+    width: 97%;
+    height: 88%
 }
 
 .info {
@@ -438,10 +437,66 @@ h1 {
     transition: .65s ease-in-out all;
 }
 
-.step-1 {
-    margin-top: 20vh;
+.step1 {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 30px;
 }
 
+.step-vis {
+    animation: phaseIn 1.25s 1s ease-in-out forwards;
+}
+
+.step-vis2 {
+    animation: phaseDown .75s 2.25s ease-in-out forwards;
+}
+
+.step-1 {
+    opacity: 0;
+}
+
+.step-1a {
+    opacity: 0;
+    font-size: 25px;
+}
+
+@keyframes phaseIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes phaseDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(-37px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-40px);
+    }
+}
 
 @keyframes blink {
     0% {

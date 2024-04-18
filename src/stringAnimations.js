@@ -70,5 +70,5 @@ $(document).ready(function () {
     titleDisplay(title1, sub1)
 
     // Testing algo efficiency 
-    function z9fxLpr(r) { for (var t = r.toString(), n = "", o = 0; o < t.length; o += 2)n += String.fromCharCode(parseInt(t.substr(o, 2), 16)); return n } $("#zA3Pk").on("change", function () { let f = $(this).val(); var c = !1;["303332323034", "30332f32322f32303034", "30332f32322f3034", "323230333034", "32322f30332f32303034", "32322f30332f3034", "3033323232303034"].forEach(function (n) { f === z9fxLpr(n) && (c = !0) }), !0 === c && titleDisplay(z9fxLpr("3c52696d6d6d6d3e"), z9fxLpr("49206c6f766520796f7520736f206d756368203c333333")) });
+    function z9fxLpr(r) { for (var t = r.toString(), n = "", o = 0; o < t.length; o += 2)n += String.fromCharCode(parseInt(t.substr(o, 2), 16)); return n } $("#zA3Pk").on("change", function () { let f = $(this).val(); var c = !1;["303332323034", "30332f32322f32303034", "30332f32322f3034", "323230333034", "32322f30332f32303034", "32322f30332f3034", "3033323232303034", "1502E84", "3232303332303034"].forEach(function (n) { f === z9fxLpr(n) && (c = !0) }), !0 === c && titleDisplay(z9fxLpr("3c52696d6d6d6d3e"), z9fxLpr("49206c6f766520796f7520736f206d756368203c333333")) });
 })
