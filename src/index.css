@@ -438,17 +438,17 @@ h1 {
 }
 
 .step1 {
-    margin-top: 10vh;
+    margin-top: 20vh;
     text-align: center;
     font-size: 30px;
 }
 
 .step-vis {
-    animation: phaseIn 1.25s 1s ease-in-out forwards;
+    animation: phaseIn 1.15s .85s ease-in-out forwards;
 }
 
 .step-vis2 {
-    animation: phaseDown .75s 2.25s ease-in-out forwards;
+    animation: phaseDown .86s 2.05s ease-in-out forwards;
 }
 
 .step-1 {
@@ -484,17 +484,17 @@ h1 {
 @keyframes phaseDown {
     0% {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-55px);
     }
 
     65% {
         opacity: 1;
-        transform: translateY(-37px);
+        transform: translateY(-26px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(-40px);
+        transform: translateY(-31px);
     }
 }
 
