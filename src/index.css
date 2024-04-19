@@ -515,7 +515,7 @@ h3 {
 
     65% {
         opacity: 1;
-        transform: translateY(-20px);
+        transform: translateY(-15px);
     }
 
     100% {
@@ -532,7 +532,7 @@ h3 {
 
     65% {
         opacity: 1;
-        transform: translateY(-26px);
+        transform: translateY(-27px);
     }
 
     100% {
@@ -575,7 +575,7 @@ h3 {
 
 @keyframes rotate {
     0% {
-        transform: rotate(-10deg);
+        transform: rotate(0deg);
     }
 
     100% {
@@ -611,6 +611,11 @@ h3 {
     opacity: 0;
 }
 
+#za3Pl {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
 #exit:hover {
     background-color: red !important;
 }
@@ -620,5 +625,10 @@ h3 {
     position: absolute;
     top: -250px;
     left: -250px;
-    animation: rotate 15s infinite;
+    animation: rotate 10s linear infinite;
+}
+
+#upload {
+    height: 100px;
+    width: 100px;
 }
