@@ -29,8 +29,15 @@ $(document).ready(function () {
     const observer1 = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                $(".step-1").addClass("step-vis");
-                $(".step-1a").addClass("step-vis2");
+                console.log(entry.target.className.toString())
+                let element = entry.target.className.toString()
+                switch (element) {
+                    case "step1":
+                        $(".step-1").addClass("step-vis");
+                        $(".step-1a").addClass("step-vis2");
+                        $(".bridge1").addClass("bridge1a")
+                        break
+                }
             }
         });
     }, {

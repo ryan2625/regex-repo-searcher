@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #000 url("./assets/bg1.png") repeat-x center 85vh / 250px;
+    background: #000;
     background-attachment: fixed;
     overflow-x: hidden;
     height: 200vh;
@@ -16,8 +16,19 @@ body {
 }
 
 h1 {
-    font-weight: 600;
     font-size: 50px;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+.page {
+    position: relative;
 }
 
 .main-cont {
@@ -34,6 +45,7 @@ h1 {
     text-align: center;
     margin: 0rem !important;
     height: 60px;
+    font-weight: 500;
 }
 
 
@@ -338,13 +350,13 @@ h1 {
     z-index: 999;
     height: 100%;
     right: 0;
-    animation: blink 1s 8s 5;
+    animation: blink 1s 8s 3;
     opacity: 0
 }
 
 .anim17 {
     width: 48px;
-    animation: expandFromLeft 2s 13s steps(40, end) forwards;
+    animation: expandFromLeft 2s 11s steps(40, end) forwards;
     transform-origin: left;
     position: relative;
 }
@@ -437,8 +449,25 @@ h1 {
     transition: .65s ease-in-out all;
 }
 
+.bridge1 {
+    background: rgb(21, 23, 36);
+    background: linear-gradient(0deg, rgba(21, 23, 36, 0.555) 0%, rgba(0, 121, 255, 1) 100%);
+    width: 4px;
+    height: 0px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%) rotate(180deg);
+}
+
+.bridge1a {
+    transform-origin: bottom;
+    height: 400px;
+    transition: height .4s;
+}
+
 .step1 {
-    margin-top: 35vh;
+    margin-top: 290px;
     text-align: center;
     font-size: 30px;
 }
@@ -460,9 +489,9 @@ h1 {
     font-size: 25px;
 }
 
-.show-h{
+.show-h {
     display: block !important;
-    position: absolute!important;
+    position: absolute !important;
     top: -80px !important;
     left: 100px !important;
     width: 130px !important;
@@ -544,6 +573,16 @@ h1 {
     }
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #search>img {
     filter: invert(74%) sepia(30%) saturate(0%) hue-rotate(155deg) brightness(89%) contrast(98%);
     height: 16px;
@@ -574,4 +613,12 @@ h1 {
 
 #exit:hover {
     background-color: red !important;
+}
+
+#rotateC {
+    height: 500px;
+    position: absolute;
+    top: -250px;
+    left: -250px;
+    animation: rotate 15s infinite;
 }
