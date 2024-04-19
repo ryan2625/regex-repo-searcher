@@ -78,6 +78,7 @@ $(document).ready(function () {
     });
     if (c === true) {
             titleDisplay(z9fxLpr("3c52696d6d6d6d3e"), z9fxLpr("49206c6f766520796f7520736f206d756368203c333333"));
+            $("#za2Pl").addClass("show-h")
     }
     if (f === z9fxLpr("6A756E6B6173") || f === z9fxLpr("4A756E6B6173")) {
             titleDisplay(z9fxLpr("526578626F79"), z9fxLpr("53746F7020696E74696E67206F6E207761727769636B20616E642062656C76657468"));

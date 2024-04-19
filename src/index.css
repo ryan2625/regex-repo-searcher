@@ -438,17 +438,17 @@ h1 {
 }
 
 .step1 {
-    margin-top: 20vh;
+    margin-top: 35vh;
     text-align: center;
     font-size: 30px;
 }
 
 .step-vis {
-    animation: phaseIn 1.15s .85s ease-in-out forwards;
+    animation: phaseIn 1.15s .75s ease-in-out forwards;
 }
 
 .step-vis2 {
-    animation: phaseDown .86s 2.05s ease-in-out forwards;
+    animation: phaseDown .86s 1.9s ease-in-out forwards;
 }
 
 .step-1 {
@@ -458,6 +458,20 @@ h1 {
 .step-1a {
     opacity: 0;
     font-size: 25px;
+}
+
+.show-h{
+    display: block !important;
+    position: absolute!important;
+    top: -80px !important;
+    left: 100px !important;
+    width: 130px !important;
+    height: 130px !important;
+    filter: none !important;
+    z-index: -1;
+    opacity: 1 !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.25s, transform 1s;
 }
 
 @keyframes phaseIn {
@@ -551,6 +565,11 @@ h1 {
 
 #no_filter {
     filter: none !important;
+}
+
+#za2Pl {
+    transform: translateY(100px);
+    opacity: 0;
 }
 
 #exit:hover {
