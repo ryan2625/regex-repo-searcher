@@ -456,7 +456,7 @@ h3 {
     height: 0px;
     position: absolute;
     bottom: -30px;
-    left: 50%;
+    left: calc(50%);
     transform: translate(-50%) rotate(180deg);
 }
 
@@ -470,6 +470,7 @@ h3 {
     margin-top: 290px;
     text-align: center;
     font-size: 30px;
+    position: relative;
 }
 
 .step-vis {
@@ -480,6 +481,10 @@ h3 {
     animation: phaseDown .86s 1.9s ease-in-out forwards;
 }
 
+.step-vis3 {
+    animation: phaseDown .86s 2.1s ease-in-out forwards;
+}
+
 .step-1 {
     opacity: 0;
 }
@@ -487,6 +492,13 @@ h3 {
 .step-1a {
     opacity: 0;
     font-size: 25px;
+}
+
+.step-1b {
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .show-h {
@@ -538,6 +550,23 @@ h3 {
     100% {
         opacity: 1;
         transform: translateY(-31px);
+    }
+}
+
+@keyframes phaseDown2 {
+    0% {
+        opacity: 0;
+        transform: translateY(-55px);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(-27px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-310px);
     }
 }
 
@@ -628,7 +657,8 @@ h3 {
     animation: rotate 10s linear infinite;
 }
 
-#upload {
-    height: 100px;
-    width: 100px;
+#s1-bg {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -60px);
 }

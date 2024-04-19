@@ -36,6 +36,7 @@ $(document).ready(function () {
                         $(".step-1").addClass("step-vis");
                         $(".step-1a").addClass("step-vis2");
                         $(".bridge1").addClass("bridge1a")
+                        $(".step-1b").addClass("step-vis3")
                         break
                 }
             }
