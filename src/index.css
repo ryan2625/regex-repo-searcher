@@ -659,6 +659,7 @@ h3 {
 
 #s1-bg {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -60px);
+    left: 60%;
+    transform: translateY(-60%) rotate(70deg);
+    pointer-events: none;
 }
