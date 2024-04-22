@@ -623,6 +623,13 @@ h3 {
     pointer-events: none;
 }
 
+#square-circ {
+    position: absolute;
+    animation: rotate 200s infinite;
+    top: -200px;
+    left: -180px;
+}
+
 @keyframes up1 {
     0% {
         transform: translate(0px);
