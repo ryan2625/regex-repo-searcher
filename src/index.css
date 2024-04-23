@@ -625,7 +625,7 @@ h3 {
 
 #square-circ {
     position: absolute;
-    animation: rotate 200s infinite;
+    animation: rotate 225s infinite;
     top: -200px;
     left: -180px;
 }

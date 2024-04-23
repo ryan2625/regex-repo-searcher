@@ -2,6 +2,7 @@ import os
 import re
 from openpyxl import Workbook
 
+
 # Author: Ryan Freas
 # Date: 4/1/2024
 # Goal: Search for instances of SQL calls (or any string you are looking for)

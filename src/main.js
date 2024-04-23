@@ -29,7 +29,6 @@ $(document).ready(function () {
     const observer1 = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log(entry.target.className.toString())
                 let element = entry.target.className.toString()
                 switch (element) {
                     case "step1":
