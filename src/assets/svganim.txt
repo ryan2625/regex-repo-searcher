@@ -1,0 +1,4 @@
+https://css-tricks.com/svg-line-animation-works/
+
+https://animejs.com/documentation/#lineDrawing
+
