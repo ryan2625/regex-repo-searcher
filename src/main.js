@@ -36,6 +36,8 @@ $(document).ready(function () {
                         $(".step-1a").addClass("step-vis2");
                         $(".bridge1").addClass("bridge1a")
                         $(".step-1b").addClass("step-vis3")
+                        $(".cloud1").addClass("cloud1a")
+                        $(".cloud2").addClass("cloud2a")
                         break
                 }
             }
