@@ -499,6 +499,11 @@ h3 {
     opacity: 0;
     cursor: pointer;
     font-size: 20px;
+    height: 350px;
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
 .show-h {
@@ -549,6 +554,18 @@ h3 {
     position: absolute;
     width: 220px;
     bottom: -137px;
+}
+
+.upload { 
+    position: relative;
+}
+
+.upload > img {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-55%, -50%);
+    width: 350px;
 }
 
 #file-fan1 {
