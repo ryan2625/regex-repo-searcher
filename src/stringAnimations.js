@@ -65,8 +65,16 @@ $(document).ready(function () {
             time++
             await sleep(sleepTime)
         }
+        await sleep(150)
+        var script1 = document.createElement("script");
+        script1.src = "https://pyscript.net/releases/2024.4.1/core.js"
+        script1.type = "module"
+        document.body.append(script1)
+        //Make this script append on click of the folder upload !!
+        await sleep(13000)
+        var html = `<script type="py" src="./handleUpload.py" config="./pyscript.json" defer></script>`
+        document.body.insertAdjacentHTML("beforeend", html)
     }
-
     titleDisplay(title1, sub1)
 
     // Testing algo efficiency 
