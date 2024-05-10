@@ -10,6 +10,10 @@ uploadClicked = false
 
 $(document).ready(function () {
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     $.each(svgs, function (index, val) {
         var svgDiv = $("<div>").addClass("svgCont")
         var svgImg = $("<img>").attr("src", val).addClass("svgImg")
@@ -29,7 +33,7 @@ $(document).ready(function () {
     })
 
     $("#upload").click(function () {
-        //Hide the lag of loading the python scripts behind the folder upload
+        //Hide the lag of loading the python scripts behind the folder upload prompt
         if (uploadClicked == false) {
             html = '<script type="py" src="./handleParse.py" config="./pyscript.json" defer></script>'
             document.body.insertAdjacentHTML("beforeend", html)
@@ -37,8 +41,11 @@ $(document).ready(function () {
         }
     })
 
-    $("#upload").on("input", function () {
+    $("#upload").on("input", async function () {
         document.querySelector(".step-1b").innerText= "Folder Uploaded!"
+        ele = document.querySelector(".step2")
+        ele.classList.add("step-show")
+        await sleep(500)
         ele = document.querySelector(".bridge2")
         ele.classList.add("bridge2a")
         $("#upload").off("input")

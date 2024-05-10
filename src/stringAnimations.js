@@ -14,12 +14,12 @@ const chars = [
 
 $(document).ready(function () {
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
     function getRandomElement(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
+    }
+    
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     // Algorithm for the animation that updates and scrambles our titles
@@ -97,3 +97,4 @@ $(document).ready(function () {
 
 
 })
+
