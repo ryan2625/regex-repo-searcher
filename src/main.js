@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $("#upload").click(function () {
         // Add functionality or promise to ensure extra py-script for handleUpload is added before 
-        // EDIT: We can do away with handle upload eventually and actuallly use this input to triggger adding the other scripts later so theyre ready when needed. No other edits needed possibly except implementing loading the future scripts...?
+        // EDIT: We can do away with handle upload eventually and actuallly use this input to triggger adding the other scripts later so theyre ready when needed. No other edits needed possibly except implementing loading the future scripts...? Handle current handleUpload script n JS instead of python
         if (uploadClicked == false) {
             html = '<script type="py" src="./handleUpload.py" config="./pyscript.json" defer></script>'
             document.body.insertAdjacentHTML("beforeend", html)
