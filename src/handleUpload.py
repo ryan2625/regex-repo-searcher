@@ -6,10 +6,9 @@ async def handleUpload(event):
   ele.classList.add("bridge2a")
   print(event.target.files)
   for file in event.target.files:
-      #print(file.name)
-      print()
+       print(file.name)
   document.querySelector(".step-1b").innerText= "Folder Uploaded!"
   
       
-add_event_listener(document.getElementById("upload"), "change", handleUpload)
+add_event_listener(document.getElementById("trigger"), "change", handleUpload)
 
