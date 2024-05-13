@@ -604,7 +604,7 @@ h3 {
     width: 4px;
     background: linear-gradient(180deg, rgba(187, 126, 238, 1) 20%, rgba(144,200,237,255) 100%);
     height: 0px;
-    bottom: 450px;
+    top: -685px;
     left: calc(50%);
     transform: translate(-8px) rotate(180deg);
     position: absolute;
@@ -612,7 +612,7 @@ h3 {
 
 .bridge2a {
     transform-origin: bottom;
-    height: 320px;
+    height: 330px;
     transition: height .6s .5s;
 }
 
@@ -621,6 +621,7 @@ h3 {
     box-sizing: content-box;
     display: none;
     height: 1000px;
+    position: relative;
 }
 
 .step-show {
@@ -628,7 +629,7 @@ h3 {
 }
 
 .step2-header{
-    margin-top: 270px;
+    margin-top: 300px;
     text-align: center;
     font-size:  48px !important;
     opacity: 0;
