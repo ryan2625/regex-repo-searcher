@@ -612,8 +612,8 @@ h3 {
 
 .bridge2a {
     transform-origin: bottom;
-    height: 350px;
-    transition: height .6s 1s;
+    height: 320px;
+    transition: height .6s .5s;
 }
 
 .step2 {
@@ -627,9 +627,15 @@ h3 {
 }
 
 .step2-header{
-    margin-top: 370px;
+    margin-top: 270px;
     text-align: center;
     font-size:  48px !important;
+    opacity: 0;
+}
+.step-2a {
+    text-align: center;
+    opacity: 0;
+    font-size: 25px;
 }
 
 #file-fan1 {

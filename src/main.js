@@ -55,6 +55,7 @@ $(document).ready(function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 let element = entry.target.className.toString()
+                console.log(element)
                 switch (element) {
                     case "step1":
                         $(".step-1").addClass("step-vis");
@@ -64,6 +65,9 @@ $(document).ready(function () {
                         $(".cloud1").addClass("cloud1a")
                         $(".cloud2").addClass("cloud2a")
                         break
+                    case "step2 step-show":
+                        $(".step2-header").addClass("step-vis")
+                        $(".step-2a").addClass("step-vis2");
                 }
             }
         });
@@ -73,4 +77,5 @@ $(document).ready(function () {
     });
 
     observer1.observe($(".step1")[0]);
+    observer1.observe($(".step2")[0]);
 });
