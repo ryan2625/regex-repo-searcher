@@ -620,6 +620,7 @@ h3 {
     margin-top: 0 !important;
     box-sizing: content-box;
     display: none;
+    height: 1000px;
 }
 
 .step-show {
@@ -632,10 +633,41 @@ h3 {
     font-size:  48px !important;
     opacity: 0;
 }
+
 .step-2a {
     text-align: center;
     opacity: 0;
     font-size: 25px;
+}
+
+.prompt-cont{
+    display: flex;
+    width: 500px;
+    height: 300px;
+    background-color: #1b1b1b;
+    position: relative;
+    margin: 0 auto !important;
+    border-radius: 5px;
+}
+
+.prompt-head {
+    background-color: white;
+    height: 30px;
+    border-radius: 5px 5px 0px 0px;
+    width: 100%;
+    display: flex;
+}
+
+.prompt-head > img {
+    width: 25px;
+    padding: 3px;
+}
+
+.prompt-head > span {
+    color: #000;
+    display: block;
+    padding: 6px;
+    font-size: 15px;
 }
 
 #file-fan1 {
