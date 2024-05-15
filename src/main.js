@@ -51,6 +51,8 @@ $(document).ready(function () {
         $("#upload").off("input")
     })
 
+    
+
     const observer1 = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

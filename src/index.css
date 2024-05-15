@@ -683,6 +683,7 @@ h3 {
 .prompt-body > p {
     margin: .2rem 0;
     white-space: wrap;
+    width: fit-content;
 }
 
 .prompt-body p:nth-child(2) {
@@ -691,6 +692,46 @@ h3 {
 
 .prompt-body > p:nth-child(odd) {
     margin-bottom: 1rem;
+}
+
+.input-enter{
+    background-color: #0d0d0d;
+    border: 0px;
+    color: var( --main-text);
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+}
+
+.input-enter:focus{
+    /* border: 0px solid black; */
+    outline: none;
+    color: rgb(255, 255, 255);
+    caret-color: #33333300;
+}
+
+.line-cmd {
+    display: flex;
+    height: 20px;
+    position: relative;
+    width: fit-content;
+}
+
+.inner {
+    position: relative;
+    width: fit-content;
+}
+
+.inner::after {
+    content: "";
+    display: block;
+    background-color: var( --main-text);
+    position: absolute;
+    height: 4px;
+    width: 9px;
+    bottom: 0;
+    right: 0px;
+    animation: blink 1.05s infinite;
 }
 
 #file-fan1 {
@@ -943,7 +984,7 @@ h3 {
         opacity: 0;
     }
 
-    40% {
+    49% {
         opacity: 0;
     }
 
@@ -951,7 +992,7 @@ h3 {
         opacity: 1;
     }
 
-    90% {
+    99% {
         opacity: 1;
     }
 
