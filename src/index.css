@@ -646,7 +646,7 @@ h3 {
     display: flex;
     flex-direction: column;
     min-width: 600px;
-    width: 70%;
+    width: 90%;
     min-height: 300px;
     background-color: #0d0d0d;
     border: 1px solid rgb(57, 57, 57);
@@ -700,13 +700,15 @@ h3 {
     color: var( --main-text);
     display: inline-block;
     position: relative;
-    width: fit-content;
+    width: 400px;
+    overflow: visible;
+    font-family: inherit;
 }
 
 .input-enter:focus{
     /* border: 0px solid black; */
     outline: none;
-    color: rgb(255, 255, 255);
+    color: var( --main-text);
     caret-color: #33333300;
 }
 
@@ -718,8 +720,8 @@ h3 {
 }
 
 .inner {
+    width: 0;
     position: relative;
-    width: fit-content;
 }
 
 .inner::after {
@@ -730,9 +732,10 @@ h3 {
     height: 4px;
     width: 9px;
     bottom: 0;
-    right: 0px;
+    right: -12px;
     animation: blink 1.05s infinite;
 }
+
 
 #file-fan1 {
     left: 130px;

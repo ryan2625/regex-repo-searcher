@@ -41,6 +41,7 @@ $(document).ready(function () {
         }
     })
 
+    // Display next step when user uploads file
     $("#upload").on("input", async function () {
         $(".step-1b").text("Folder Uploaded!")
         ele = $(".step2")
@@ -51,7 +52,36 @@ $(document).ready(function () {
         $("#upload").off("input")
     })
 
-    
+    var prevLen = 0
+    var count = 0
+    var lenStack = [0]
+
+    /* 
+    A very convoluted way I found to ensure the cursor 
+    is always right after the last letter you entered in the 
+    input. The width of an input has weird interactions
+    with how the letters line up and the scaling is not
+    completely even. We could not simply use width:fit content
+    or text-align in this situation. To ensure characters line up, 
+    add an extra pixel every 8 iterations.
+    */
+    $("#cmd-input").on("input", function () {
+        // Detect if user is deleting or adding character to input
+        if ($(this).val().length > prevLen) {
+            if (count % 3 == 0) {
+                lenStack.push(8)
+            }
+            else {
+                lenStack.push(7)
+            }
+        } else {
+            lenStack.pop()
+        }
+        $(".inner").css('width', (lenStack.reduce((total, currVal) => total + currVal)))
+        count +=1
+        prevLen = $(this).val().length
+    }
+    )
 
     const observer1 = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
