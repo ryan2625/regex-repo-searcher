@@ -6,6 +6,22 @@
     --text-dimmed: #7f808e;
 }
 
+  *::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #e3e3e3;
+    width: 5px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #4f4f4f;
+    border-radius: 22px;
+    border: 2px outset #aeaeae;
+    width: 5px;
+  }
+
 body {
     background: #000;
     background-attachment: fixed;
@@ -647,7 +663,7 @@ h3 {
     flex-direction: column;
     min-width: 600px;
     width: 90%;
-    min-height: 300px;
+    height: 700px;
     background-color: #0d0d0d;
     border: 1px solid rgb(57, 57, 57);
     position: relative;
@@ -677,7 +693,8 @@ h3 {
 
 .prompt-body {
     padding: 3px;
-    color: var( --main-text)
+    color: var( --main-text);
+    overflow-y: auto;
 }
 
 .prompt-body > p {
@@ -703,6 +720,7 @@ h3 {
     width: 400px;
     overflow: visible;
     font-family: inherit;
+    font-size: 16px;
 }
 
 .input-enter:focus{

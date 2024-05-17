@@ -29,11 +29,11 @@ $(document).ready(function () {
         console.log("ASD")
         // Detect if user is deleting or adding character to input
         if ($(this).val().length > prevLen) {
-            if (count % 3 == 0) {
+            if (count % 5 == 0) {
                 lenStack.push(8)
             }
             else {
-                lenStack.push(7)
+                lenStack.push(9)
             }
         } else {
             lenStack.pop()
@@ -42,6 +42,8 @@ $(document).ready(function () {
         count += 1
         prevLen = $(this).val().length
     }
+
+    var searchTerms = []
 
     $(".prompt-body").on("keypress", "input", function (e) {
         if (e.which == 13) {
@@ -52,13 +54,14 @@ $(document).ready(function () {
                 ||
                 ((command.substring(0, 11) == "op replace ") && command.split(" ").length == 4)) {
                     $(this).parent().removeClass("inner")
-                    html = `<span>${$(this).val()} command successful.<span/></br></br>
+                    html = `<span>"${$(this).val()}" command successful. Lovely.<span/></br></br>
                             <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
                             <div class="inner"><input type="text" name="" id="cmd-input" autocomplete="off"  class="input-enter"></div>`
                     $(".prompt-body").append(html)
             } else {
                 $(this).parent().removeClass("inner")
-                html = `<span>${$(this).val()} is not a valid command.<span/></br></br>
+                html = `<span>Invalid operation. ${$(this).val()} is not recognized as an internal or </br>external command,
+                operable program or batch file.<span/></br></br>
                         <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
                         <div class="inner"><input type="text" name="" id="cmd-input" autocomplete="off"  class="input-enter"></div>`
                 $(".prompt-body").append(html)
@@ -68,6 +71,7 @@ $(document).ready(function () {
             lenStack = [0]            
             $(this).off("input", listener)
             $(".input-enter").on("input", listener)
+            $(".input-enter").focus()
             $(this).prop("disabled", true)
         }
     })
