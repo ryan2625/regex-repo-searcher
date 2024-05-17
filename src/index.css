@@ -717,7 +717,7 @@ h3 {
     color: var( --main-text);
     display: inline-block;
     position: relative;
-    width: 400px;
+    max-width: 400px;
     overflow: visible;
     font-family: inherit;
     font-size: 16px;
