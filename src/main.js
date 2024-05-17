@@ -8,7 +8,7 @@ const svgs = [
 
 var uploadClicked = false
 
-$(document).ready(function () {
+$(document).ready(function fun () {
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -35,8 +35,8 @@ $(document).ready(function () {
     $("#upload").click(function () {
         //Hide lag of loading the python scripts behind the folder upload prompt
         if (uploadClicked == false) {
-            html = '<script type="py" src="./handleParse.py" config="./pyscript.json" defer></script>'
-            document.body.insertAdjacentHTML("beforeend", html)
+            $('head').append($("<script src='./commandLine.js'></script>"))
+            $("head").append($("<script type='py' src='./handleParse.py' config='./pyscript.json' defer></script>"))
             uploadClicked = true
         }
     })
@@ -80,3 +80,5 @@ $(document).ready(function () {
     observer1.observe($(".step1")[0]);
     observer1.observe($(".step2")[0]);
 });
+
+fun()

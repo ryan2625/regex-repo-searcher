@@ -10,6 +10,8 @@ set the new
 
 $(document).ready(function () {
 
+    console.log("LOADED")
+
     var prevLen = 0
     var count = 0
     var lenStack = [0]
