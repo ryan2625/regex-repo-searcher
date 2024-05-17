@@ -7,7 +7,7 @@
 }
 
   *::-webkit-scrollbar {
-    width: 13px;
+    width: 10px;
   }
   
   *::-webkit-scrollbar-track {
@@ -694,7 +694,9 @@ h3 {
 .prompt-body {
     padding: 3px;
     color: var( --main-text);
+    height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .prompt-body > p {
@@ -717,10 +719,10 @@ h3 {
     color: var( --main-text);
     display: inline-block;
     position: relative;
-    max-width: 400px;
-    overflow: visible;
     font-family: inherit;
     font-size: 16px;
+    overflow-x: hidden;
+    width: 350px;
 }
 
 .input-enter:focus{
@@ -740,6 +742,7 @@ h3 {
 .inner {
     width: 0;
     position: relative;
+    white-space: wrap;
 }
 
 .inner::after {
