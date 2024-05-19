@@ -43,34 +43,36 @@ $(document).ready(function () {
 
     function handleCommand(command){
         splitCommand = command.split(" ")
-        let validation = false
         if ((command.substring(0, 7) == "op add ") && splitCommand.length == 3) {
             validation = true
             if (searchTerms.indexOf(splitCommand[2]) === -1) {
                 stringToAdd += `<span>Added "${splitCommand[2]}" to list of search terms.<span/></br></br>`
                 searchTerms.push(splitCommand[2])
             } else {
-                stringToAdd += `<span>ERR: "${splitCommand[2]}" is already in your list.<span/></br></br>`
+                stringToAdd += `<span>ERR: The phrase "${splitCommand[2]}" already exists your list of search terms.<span/></br></br>`
             }
             return true
         }
         else if ((command.substring(0, 10) == "op delete ") && splitCommand.length == 3) {
             if (searchTerms.indexOf(splitCommand[2]) === -1) {
-                stringToAdd += `<span>The phrase "${splitCommand[2]}" does not exist in your list of search terms.<span/></br></br>`
-                return true
+                stringToAdd += `<span>ERR: The phrase "${splitCommand[2]}" does not exist in your list of search terms.<span/></br></br>`
+            } else {
+                stringToAdd += `<span>Removed "${splitCommand[2]}" from list of search terms.<span/></br></br>`
+                searchTerms = searchTerms.filter(term => term !== splitCommand[2])
             }
-            stringToAdd += `<span>Removed "${splitCommand[2]}" from list of search terms.<span/></br></br>`
-            searchTerms = searchTerms.filter(term => term !== splitCommand[2])
             return true
         }
         else if ((command.substring(0, 11) == "op replace ") && splitCommand.length == 4) {
-            if (searchTerms.indexOf(splitCommand[2]) === -1) {
-                stringToAdd += `<span>The phrase "${splitCommand[2]}" does not exist in your list of search terms.<span/></br></br>`
+            if ((searchTerms.indexOf(splitCommand[2]) === -1)) {
+                stringToAdd += `<span>ERR: The phrase "${splitCommand[2]}" does not exist in your list of search terms.<span/></br></br>`
                 return true
+            } else if (searchTerms.indexOf(splitCommand[3]) !== -1) {
+                stringToAdd += `<span>ERR: The phrase "${splitCommand[3]}" already exists in your list of search terms.<span/></br></br>`
             } else {
                 searchTerms[searchTerms.indexOf(splitCommand[2])] = splitCommand[3]
+                stringToAdd += `<span>Replaced "${splitCommand[2]}" with "${splitCommand[3]}".<span/></br></br>`
             }
-            stringToAdd += `<span>Replaced "${splitCommand[2]}" with "${splitCommand[3]}".<span/></br></br>`
+
             return true
         }
         else if ((command.substring(0, 7) == "op list") && splitCommand.length == 2) {
@@ -79,6 +81,9 @@ $(document).ready(function () {
             }
             stringToAdd += "</br>"
             return true
+        }
+        else {
+            return false
         }
     }
 
@@ -107,4 +112,4 @@ $(document).ready(function () {
 
     $(".input-enter").on("input", listener)
 
-})
+})  
