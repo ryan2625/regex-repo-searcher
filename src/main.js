@@ -8,7 +8,7 @@ const svgs = [
 
 var uploadClicked = false
 
-$(document).ready(function fun () {
+$(document).ready(function() {
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -80,5 +80,3 @@ $(document).ready(function fun () {
     observer1.observe($(".step1")[0]);
     observer1.observe($(".step2")[0]);
 });
-
-fun()
