@@ -106,6 +106,5 @@ $(document).ready(function () {
     })
 
     $(".input-enter").on("input", listener)
-    $(".input-enter").focus()
 
 })
