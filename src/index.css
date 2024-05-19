@@ -94,6 +94,10 @@ h3 {
     cursor: pointer;
 }
 
+.exit:hover {
+    background-color: red !important;
+}
+
 .svgCont>img {
     aspect-ratio: 1/1;
     width: 25px;
@@ -672,24 +676,42 @@ h3 {
 }
 
 .prompt-head {
+    display: flex;
+    justify-content: space-between;
     background-color: white;
+    color: #000;
     height: 30px;
     border-radius: 5px 5px 0px 0px;
     width: 100%;
     display: flex;
 }
 
-.prompt-head > img {
+.prompt-head > div:first-child{
+    display: flex;
+}
+
+.prompt-head > div:nth-child(2) {
+    display: flex;
+}
+
+.prompt-head > div:first-child img {
     width: 25px;
     padding: 3px;
 }
 
-.prompt-head > span {
+.prompt-head > div:first-child span {
     color: #000000;
     display: block;
     padding: 6px;
     font-size: 15px;
 }
+
+.prompt-head > div:nth-child(2) img{
+    width: 25px;
+    height: 25px;
+    margin: auto 0;
+}
+
 
 .prompt-body {
     padding: 3px;
@@ -712,6 +734,18 @@ h3 {
 .prompt-body > p:nth-child(odd) {
     margin-bottom: 1rem;
 }
+
+.cmd-icons {
+    display: grid;
+    place-items: center;
+    padding: 0 .5rem;
+    cursor: pointer;
+}
+
+.cmd-icons:hover {
+    background-color: rgb(227, 227, 227);
+}
+
 
 .input-enter{
     background-color: #0d0d0d;
@@ -809,10 +843,6 @@ h3 {
 #za3Pl {
     transform: translateY(100px);
     opacity: 0;
-}
-
-#exit:hover {
-    background-color: red !important;
 }
 
 #rotateC {
