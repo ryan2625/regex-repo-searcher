@@ -13,6 +13,7 @@ $(document).ready(function () {
     var prevLen = 0
     var count = 0
     var lenStack = [0]
+    var stringToAdd = ""
     /* 
     A very convoluted way I found to ensure the cursor 
     is always right after the last letter you entered in the 
@@ -46,65 +47,60 @@ $(document).ready(function () {
         if ((command.substring(0, 7) == "op add ") && splitCommand.length == 3) {
             validation = true
             if (searchTerms.indexOf(splitCommand[2]) === -1) {
-                html = `<span>Added "${splitCommand[2]}" to list of search terms.<span/></br></br>
-                <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
-                <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
-                $(".prompt-body").append(html)
+                stringToAdd += `<span>Added "${splitCommand[2]}" to list of search terms.<span/></br></br>`
                 searchTerms.push(splitCommand[2])
             } else {
-                html = `<span>ERR: "${splitCommand[2]}" is already in your list.<span/></br></br>
-                <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
-                <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
-                $(".prompt-body").append(html)
+                stringToAdd += `<span>ERR: "${splitCommand[2]}" is already in your list.<span/></br></br>`
             }
-        }
-        else if ((command.substring(0, 10) == "op delete ") && splitCommand.length == 3) {
-            validation = true
-            html = `<span>Removed "${splitCommand[2]}" from list of search terms.<span/></br></br>
-                    <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
-                    <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
-            $(".prompt-body").append(html)
-        }
-        else if ((command.substring(0, 11) == "op replace ") && splitCommand.length == 4) {
-            validation = true
-            html = `<span>Replaced "${splitCommand[2]}" with "${splitCommand[3]}".<span/></br></br>
-                    <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
-                    <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
-            $(".prompt-body").append(html)
-        }
-        else if ((command.substring(0, 8) == "op list ") && splitCommand.length == 2) {
-            validation = true
-            html = `<span>"${$(this).val()}" command successful. Lovely.<span/></br></br>
-                    <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
-                    <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
-            $(".prompt-body").append(html)
+            return true
         }
 
-        return validation
+        else if ((command.substring(0, 10) == "op delete ") && splitCommand.length == 3) {
+            if (searchTerms.indexOf(splitCommand[2]) === -1) {
+                stringToAdd += `<span>The phrase "${splitCommand[2]}" does not exist in your list of search terms.<span/></br></br>`
+                return true
+            }
+            stringToAdd += `<span>Removed "${splitCommand[2]}" from list of search terms.<span/></br></br>`
+            searchTerms = searchTerms.filter(term => term !== splitCommand[2])
+            return true
+        }
+
+        else if ((command.substring(0, 11) == "op replace ") && splitCommand.length == 4) {
+            stringToAdd += `<span>Replaced "${splitCommand[2]}" with "${splitCommand[3]}".<span/></br></br>`
+            return true
+        }
+
+        else if ((command.substring(0, 7) == "op list") && splitCommand.length == 2) {
+            for (term in searchTerms) {
+                stringToAdd += `${searchTerms[term]} </br>`
+            }
+            stringToAdd += "</br>"
+            return true
+        }
     }
 
     $(".prompt-body").on("keypress", "input", function (e) {
+        stringToAdd = ""
         if (e.which == 13) {
             var command = $(this).val().trim().toLowerCase().replace(/\s+/g, ' ')
             splitCommand = command.split(" ")
             $(this).parent().removeClass("inner")
             if (!(handleCommand(command))) {
-                html = `<span>ERR: Invalid operation. ${$(this).val()} is not recognized as an internal or </br>external command,
-                operable program or batch file.<span/></br></br>
-                        <div class="line-cmd">C:\WINDOWS\system32>ENTER COMMAND:
-                        <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
-                $(".prompt-body").append(html)
+                stringToAdd += `<span>ERR: Invalid operation. "${$(this).val()}" is not recognized as an internal or </br>external command, operable program or batch file.<span/></br></br>`  
             }
+
+            $(this).off("input", listener)
+            $(this).prop("disabled", true)
+            stringToAdd += `<div class="line-cmd">C:&#92Windows&#92system32>ENTER COMMAND:
+            <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
+            $(".prompt-body").append(stringToAdd)
+            $(".input-enter").on("input", listener)
+            $(".input-enter").focus()
             prevLen = 0
             count = 0
             lenStack = [0]
-            $(this).off("input", listener)
-            $(this).prop("disabled", true)
-            $(".input-enter").on("input", listener)
-            $(".input-enter").focus()
         }
     })
-
 
     $(".input-enter").on("input", listener)
 
