@@ -41,7 +41,7 @@ $(document).ready(function () {
         prevLen = $(this).val().length
     }
 
-    function handleCommand(command){
+    function handleCommand(command) {
         splitCommand = command.split(" ")
         if ((command.substring(0, 7) == "op add ") && splitCommand.length == 3) {
             validation = true
@@ -76,10 +76,15 @@ $(document).ready(function () {
             return true
         }
         else if ((command.substring(0, 7) == "op list") && splitCommand.length == 2) {
-            for (term in searchTerms) {
-                stringToAdd += `${searchTerms[term]} </br>`
+            if (searchTerms.length === 0) {
+                stringToAdd += "Your search term list is empty.</br></br>"
+            } else {
+                stringToAdd += "Your search term list:</br>"
+                for (term in searchTerms) {
+                    stringToAdd += `${searchTerms[term]} </br>`
+                }
+                stringToAdd += "</br>"
             }
-            stringToAdd += "</br>"
             return true
         }
         else {
@@ -94,7 +99,7 @@ $(document).ready(function () {
             splitCommand = command.split(" ")
             $(this).parent().removeClass("inner")
             if (!(handleCommand(command))) {
-                stringToAdd += `<span>ERR: Invalid operation. "${$(this).val()}" is not recognized as an internal or </br>external command, operable program or batch file.<span/></br></br>`  
+                stringToAdd += `<span>ERR: Invalid operation. "${$(this).val()}" is not recognized as an internal or </br>external command, operable program or batch file.<span/></br></br>`
             }
 
             $(this).off("input", listener)
