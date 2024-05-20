@@ -105,13 +105,13 @@ $(document).ready(function () {
                 stringToAdd += "Invalid number of parameters.</br></br>"
             }
             return true
-        }
+        } 
         else {
             return false
         }
     }
 
-    $(".prompt-body").on("keypress", "input", function (e) {
+    var inputListener = function (e) {
         stringToAdd = ""
         if (e.which == 13) {
             var command = $(this).val().trim().toLowerCase().replace(/\s+/g, ' ')
@@ -131,8 +131,26 @@ $(document).ready(function () {
             count = 0
             lenStack = [0]
         }
-    })
+    }
+
+    function listenButton (e) {
+            if (searchTerms.length === 0) {
+                alert("You must have at least one phrase in your search list.")
+                return
+            } else {
+                $(".prompt-body").off("keypress", "input", inputListener)
+                $(".input-enter").off("input", listener)
+                $(".input-enter").prop("disabled", true)
+                $(".step-3").addClass("step-3-show")
+                $(".arrow-up").addClass("arrUp")
+                $(".arrow-up").addClass("arrUp")
+                $("#cmd-btn").off(listenButton)
+            }
+    }
+
+    $("#cmd-btn").on("click", listenButton)
+
+    $(".prompt-body").on("keypress", "input", inputListener)
 
     $(".input-enter").on("input", listener)
-
 })  
