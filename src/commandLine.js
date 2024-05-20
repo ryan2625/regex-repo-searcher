@@ -144,6 +144,7 @@ $(document).ready(function () {
                 $(".step-3").addClass("step-3-show")
                 $(".arrow-up").addClass("arrUp")
                 $(".arrow-up").addClass("arrUp")
+                $(".bridge3").addClass("bridge3a")
                 $("#cmd-btn").off(listenButton)
             }
     }
