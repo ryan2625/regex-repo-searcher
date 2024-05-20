@@ -43,6 +43,11 @@ $(document).ready(function () {
 
     function handleCommand(command) {
         splitCommand = command.split(" ")
+        if (command === "color") {
+            $(".prompt-body").css("color", "#00ff26")
+            $(".input-enter").css("color", "#00ff26")
+            return true
+        }
         if ((command.substring(0, 7) == "op add ") && splitCommand.length == 3) {
             validation = true
             if (searchTerms.indexOf(splitCommand[2]) === -1) {
