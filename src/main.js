@@ -79,4 +79,6 @@ $(document).ready(function() {
 
     observer1.observe($(".step1")[0]);
     observer1.observe($(".step2")[0]);
+
+    $("#cmd-btn").on("click", function(e) { window.alert("C")})
 });
