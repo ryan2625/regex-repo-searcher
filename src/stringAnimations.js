@@ -69,7 +69,7 @@ $(document).ready(function () {
         var script1 = document.createElement("script");
         script1.src = "https://pyscript.net/releases/2024.4.1/core.js"
         script1.type = "module"
-        document.body.append(script1)
+        $("head").append(script1)
     }
     titleDisplay(title1, sub1)
 

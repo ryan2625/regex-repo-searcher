@@ -818,7 +818,7 @@ h3 {
   }
 
   .step-3-show {
-    height: 1000px;
+    height: 500px;
   }
 
   .cmd2 {
@@ -844,6 +844,10 @@ h3 {
     opacity: 0;
   }
 
+  .arrow-up{
+    opacity: 0;
+  }
+
   .arrUp {
     animation: phaseIn 1.5s .1s ease-in-out forwards
   }
@@ -864,6 +868,13 @@ h3 {
     transition: height .6s 1s;
 }
   
+.shower {
+    text-align: center;
+    display: block !important;
+    margin: 20rem auto 0 auto;
+    font-size: 23px;
+    width: 500px;
+}
 
 #file-fan1 {
     left: 130px;
@@ -944,6 +955,11 @@ h3 {
     border: none;
     margin: 1rem 0;
 }
+
+#final-msg {
+    display: none;
+}
+
 
 @keyframes jumping {
     0% {
@@ -1150,5 +1166,23 @@ h3 {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+.no-mobile{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .no-mobile {
+        left: 0px;
+        top: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999999;
+        display: block;
+        text-align: center;
+        background-color: var(--text-dimmed);
     }
 }

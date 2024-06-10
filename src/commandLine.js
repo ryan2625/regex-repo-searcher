@@ -133,11 +133,13 @@ $(document).ready(function () {
         }
     }
 
+    var event = false
+
     function listenButton (e) {
             if (searchTerms.length === 0) {
                 alert("You must have at least one phrase in your search list.")
                 return
-            } else {
+            } else if (event === false) {
                 $(".prompt-body").off("keypress", "input", inputListener)
                 $(".input-enter").off("input", listener)
                 $(".input-enter").prop("disabled", true)
@@ -145,7 +147,8 @@ $(document).ready(function () {
                 $(".arrow-up").addClass("arrUp")
                 $(".arrow-up").addClass("arrUp")
                 $(".bridge3").addClass("bridge3a")
-                $("#cmd-btn").off(listenButton)
+                $("#final-msg").addClass("shower")
+                event = true
             }
     }
 

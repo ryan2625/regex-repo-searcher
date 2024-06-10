@@ -36,7 +36,7 @@ $(document).ready(function() {
         //Hide lag of loading the python scripts behind the folder upload prompt
         if (uploadClicked == false) {
             $('head').append($("<script src='./commandLine.js'></script>"))
-            $("head").append($("<script type='py' src='./handleParse.py' config='./pyscript.json' defer></script>"))
+            $("head").append($("<script type='py' src='./handleParse.py' config='./pyscript.json'></script>"))
             uploadClicked = true
         }
     })
@@ -51,7 +51,7 @@ $(document).ready(function() {
         ele.addClass("bridge2a")
         $("#upload").off("input")
     })
-
+     
     const observer1 = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -79,6 +79,4 @@ $(document).ready(function() {
 
     observer1.observe($(".step1")[0]);
     observer1.observe($(".step2")[0]);
-
-    $("#cmd-btn").on("click", function(e) { window.alert("C")})
 });
