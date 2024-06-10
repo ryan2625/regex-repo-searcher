@@ -27,9 +27,9 @@ $(document).ready(function () {
         let originalTitle = title.split("")
         let originalSub = sub.split("")
         // How long you want the animation to run for
-        const iterations = 75
+        const iterations = 70
         // How fast the letters change
-        const sleepTime = 35
+        const sleepTime = 34
         // Delay between changing the main title and sub title
         const delayBetweenTitles = 5
         let time = 0
