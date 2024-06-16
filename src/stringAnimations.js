@@ -92,6 +92,10 @@ $(document).ready(function () {
         if (f === z9fxLpr("717374")) {
             titleDisplay(z9fxLpr("7175657374"), z9fxLpr("676F20746F20686973746F727920636C7562206D656574696E6773206F7220656C7365"));
         }
+        if (f === z9fxLpr("676F7375")) {
+            titleDisplay(z9fxLpr("726F62"), z9fxLpr("53746f7020696e74696e67206f6e205661796e6520696e2072616e6b65642067616d6573"));
+            $("#za4Pl").addClass("show-h")
+        }
 
     });
 

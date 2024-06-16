@@ -929,6 +929,11 @@ h3 {
     opacity: 0;
 }
 
+#za4Pl {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
 #rotateC {
     height: 500px;
     position: absolute;
