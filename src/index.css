@@ -1184,7 +1184,7 @@ h3 {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .no-mobile {
         left: 0px;
         top: 0;
@@ -1192,7 +1192,7 @@ h3 {
         width: 100vw;
         height: 100vh;
         z-index: 999999;
-        display: none;
+        display: block;
         text-align: center;
         background-color: var(--text-dimmed);
     }
