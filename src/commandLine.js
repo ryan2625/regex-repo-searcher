@@ -62,9 +62,13 @@ $(document).ready(function () {
 
     async function handleCommand(command) {
         splitCommand = command.split(" ")
-        if (command.substring(0, 5) == "color") {
+        if (splitCommand[0] == "color") {
             if (splitCommand.length != 2) {
                 stringToAdd += `<span>Invalid color options given.<span/></br></br>`
+                return true
+            }
+            else if (splitCommand[1].charAt(0) == splitCommand[1].charAt(1)){
+                stringToAdd += `<span>The foreground and background colors cannot have the same value.<span/></br></br>`
                 return true
             }
             else if (splitCommand[1] == '/?') {
