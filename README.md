@@ -1,10 +1,11 @@
-﻿# Parser.io
+﻿# Sha256.io
 
-Parser.io is a web based directory inspector
-utilizing the <py-script> framework. Just
-upload a folder, specify what phrases you
-want to search for and it will automatically
-create an excel sheet detailing the line
-number, pattern matched, and more.
+Sha256.io is a web based file hasher
+that allows the user to upload a file
+of any format, and get the corresponding
+hash based on the algorithm they specify.
+This project was originally intended to 
+be a web based directory inspector with regex
+but due to certain constraints, it was
+repurposed.
 <hr/>
-This project was originally intended to use the python library openpyxl to create an excel sheet for the user. Unfortunately, this functionality has not been achieved yet. Despite this limitation, feel free to explore the website's UI and current functionality.
