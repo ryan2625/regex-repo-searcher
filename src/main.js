@@ -43,8 +43,8 @@ $(document).ready(function() {
 
     // Display next step when user uploads file
     $("#upload").on("input", async function () {
-        $(".step-1b").text("Folder Uploaded!")
-        ele = $(".step2")
+        $(".step-1b").text("File Uploaded!")
+        ele = $(".step2") 
         ele.addClass("step-show")
         await sleep(500)
         ele = $(".bridge2")

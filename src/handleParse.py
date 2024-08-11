@@ -2,15 +2,16 @@ from pyscript import window, document
 from pyodide.ffi.wrappers import add_event_listener
 import os
 import re
-
+#Originally, this project had
+#different plans. This code
+#mostly does nothing now
+#unfortunately :/ RIP 
+#py-script
 async def handleParse(event):
     print("WORKING")
-    ele = document.querySelector(".bridge2")
-    ele.classList.add("bridge2a")
     print(event.target.files)
     for file in event.target.files:
          print(file.name)
-    document.querySelector(".step-1b").innerText= "Folder Uploaded!"
 
     '''
   entries = [

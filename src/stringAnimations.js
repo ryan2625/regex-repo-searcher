@@ -1,5 +1,5 @@
-let title1 = "< Parser.io >"
-let sub1 = "Search your directories with regex"
+let title1 = "< Sha256.io >"
+let sub1 = "Generate a hash of your files"
 
 const chars = [
     ...Array.from({ length: 94 }, (_, i) => String.fromCharCode(33 + i)),
@@ -24,14 +24,15 @@ $(document).ready(function () {
 
     // Algorithm for the animation that updates and scrambles our titles
     async function titleDisplay(title, sub) {
+        var date = Date.now()
         let originalTitle = title.split("")
         let originalSub = sub.split("")
         // How long you want the animation to run for
-        const iterations = 70
+        const iterations = 75
         // How fast the letters change
-        const sleepTime = 34
+        const sleepTime = 40
         // Delay between changing the main title and sub title
-        const delayBetweenTitles = 5
+        const delayBetweenTitles = 15
         let time = 0
         while (time < iterations) {
             let newTitle = title.split("")
@@ -70,6 +71,10 @@ $(document).ready(function () {
         script1.src = "https://pyscript.net/releases/2024.4.1/core.js"
         script1.type = "module"
         $("head").append(script1)
+        var date2 = Date.now()
+        var difference = (date2 - date) / 1000
+        document.body.style.setProperty('--delay', `${(difference - 3)}s`);
+        document.body.style.setProperty('--iteration_count', `${(difference + 2.5)}`);
     }
     titleDisplay(title1, sub1)
 
