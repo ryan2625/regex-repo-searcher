@@ -91,7 +91,7 @@ e	Light yellow <br>
 f	Bright white <br>
 Color can be any valid hexadecimal number <br>
 Example to change the screen green and the text black: <br>
-color a0`
+color a0 <br>`
 
             } else if (Object.keys(color_values).includes(splitCommand[1].charAt(0)) && Object.keys(color_values).includes(splitCommand[1].charAt(1)) && command.length == 8) {
                 $(".prompt-body").css("color", color_values[command.charAt(7)])
