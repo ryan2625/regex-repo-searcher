@@ -1,13 +1,3 @@
-/*
-TODO 
-
-On enter in CMD, remove the blinking cursor on $(this), 
-make sure input is disabled, add event listener for 
-the new input dynamically created )$.input-enter . on("input") etc
-
-set the new
-*/
-
 $(document).ready(function () {
     var searchTerms = []
     var prevLen = 0
@@ -91,7 +81,7 @@ e	Light yellow <br>
 f	Bright white <br>
 Color can be any valid hexadecimal number <br>
 Example to change the screen green and the text black: <br>
-color a0 <br>`
+color a0 <br><br>`
 
             } else if (Object.keys(color_values).includes(splitCommand[1].charAt(0)) && Object.keys(color_values).includes(splitCommand[1].charAt(1)) && command.length == 8) {
                 $(".prompt-body").css("color", color_values[command.charAt(7)])
