@@ -8,7 +8,7 @@ const svgs = [
 
 var uploadClicked = false
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -44,14 +44,14 @@ $(document).ready(function() {
     // Display next step when user uploads file
     $("#upload").on("input", async function () {
         $(".step-1b").text("File Uploaded!")
-        ele = $(".step2") 
+        ele = $(".step2")
         ele.addClass("step-show")
         await sleep(500)
         ele = $(".bridge2")
         ele.addClass("bridge2a")
         $("#upload").off("input")
     })
-     
+
     const observer1 = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

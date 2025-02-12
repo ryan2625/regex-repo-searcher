@@ -33,21 +33,27 @@ $(document).ready(function () {
     line up, add 8/9 pixels depending on count and change the
     width of the parent div instead of the input directly. 
     */
+    /*
+     var listener = function (e) {
+         // Detect if user is deleting or adding character to input
+         if ($(this).val().length > prevLen) {
+             if (count % 5 == 0) {
+                 lenStack.push(8)
+             }
+             else {
+                 lenStack.push(9)
+             }
+         } else {
+             lenStack.pop()
+         }
+         $(".inner").css('width', (lenStack.reduce((total, currVal) => total + currVal)))
+         count += 1
+         prevLen = $(this).val().length
+     }
+ */
+
     var listener = function (e) {
-        // Detect if user is deleting or adding character to input
-        if ($(this).val().length > prevLen) {
-            if (count % 5 == 0) {
-                lenStack.push(8)
-            }
-            else {
-                lenStack.push(9)
-            }
-        } else {
-            lenStack.pop()
-        }
-        $(".inner").css('width', (lenStack.reduce((total, currVal) => total + currVal)))
-        count += 1
-        prevLen = $(this).val().length
+        $(this).siblings('.inner2').text($(this).val());
     }
 
     async function handleCommand(command) {
@@ -57,7 +63,7 @@ $(document).ready(function () {
                 stringToAdd += `<span>Invalid color options given.<span/></br></br>`
                 return true
             }
-            else if (splitCommand[1].charAt(0) == splitCommand[1].charAt(1)){
+            else if (splitCommand[1].charAt(0) == splitCommand[1].charAt(1)) {
                 stringToAdd += `<span>The foreground and background colors cannot have the same value.<span/></br></br>`
                 return true
             }
@@ -185,17 +191,24 @@ color a0 <br><br>`
             var command = $(this).val().trim().toLowerCase().replace(/\s+/g, ' ')
             splitCommand = command.split(" ")
             $(this).parent().removeClass("inner")
-            var cmd_result = await handleCommand(command) 
+            const elel = $(this).siblings('.inner2')
+            elel.removeClass('inner2')
+            var cmd_result = await handleCommand(command)
             if (cmd_result == false) {
                 stringToAdd += `<span>ERR: Invalid operation. "${$(this).val()}" is not recognized as an internal or </br>external command, operable program or batch file.<span/></br></br>`
             }
             $(this).off("input", listener)
             $(this).prop("disabled", true)
             stringToAdd += `<div class="line-cmd">C:&#92Windows&#92System32>
-            <div class="inner"><input type="text" name="" autocomplete="off"  class="input-enter" maxlength="32"/></div>`
+            <div class="inner">
+            <span class="inner2"></span>
+            <input type="text" name="" maxlength="32" autocomplete="off"  class="input-enter"/>
+            </div>`
+
             $(".prompt-body").append(stringToAdd)
             $(".input-enter").on("input", listener)
             $(".input-enter").focus()
+
             prevLen = 0
             count = 0
             lenStack = [0]
@@ -227,4 +240,6 @@ color a0 <br><br>`
     $(".prompt-body").on("keypress", "input", inputListener)
 
     $(".input-enter").on("input", listener)
+
+    $(".inner").click(function () { $(".input-enter").focus })
 })  
