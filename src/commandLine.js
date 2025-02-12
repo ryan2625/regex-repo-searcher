@@ -53,7 +53,8 @@ $(document).ready(function () {
  */
 
     var listener = function (e) {
-        $(this).siblings('.inner2').text($(this).val());
+        const newVal = $(this).val().replace(/ /g, "\u00A0");
+        $(this).siblings('.inner2').text(newVal);
     }
 
     async function handleCommand(command) {
